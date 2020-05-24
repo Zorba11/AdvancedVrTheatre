@@ -9,24 +9,51 @@ import { Easing } from 'react-native';
 class Title extends React.Component {
     constructor() {
         super();
-        // this.state = { slideLeft: new Animated.Value(-1), fadeIn: new Animated.Value(0)};
+        this.state = { slideLeft: new Animated.Value(300), fadeIn: new Animated.Value(0)};
+    }
+
+    componentDidMount() {
+        Animated.sequence([
+            Animated.parallel([
+                Animated.timing(
+                    this.state.slideLeft,
+                    {
+                        toValue: 500,
+                        duration: 3000,
+                        easing: Easing.ease
+                    }),
+                    Animated.timing(
+                        this.state.fadeIn,
+                        {
+                         toValue: 1,
+                         duration: 3000,
+                         easing: Easing.ease
+                        }
+                      )
+            ]
+            )
+        ]).start();
     }
 
     render() {
         return (
-            <View style={{ margin: 10 }}>
-                <Text style={{ 
-                    fontSize: 50, 
+            <View>
+                <Animated.Text style={{
+                    fontSize: 50,
+                    fontWeight: 400,
                     textAlign: 'center', 
                     color: '#FFFFFF',
-                    opacity: 1,
+                    opacity: this.state.fadeIn,
                     transform: [
-                        {translateX: 500}
+                        {
+                            translateX: this.state.slideLeft
+                        }
                     ]
+
                 }}
                 >
                 VR Theatre
-                </Text>
+                </Animated.Text>
             </View>
         )
     }

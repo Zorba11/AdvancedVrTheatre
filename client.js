@@ -13,7 +13,13 @@ function init(bundle, parent, options = {}) {
   const myCylinderSurface = new Surface(
     1500,
     800,
-    Surface.SurfaceShape.Cylinder);
+    Surface.SurfaceShape.Flat);
+
+    myCylinderSurface.setAngle(
+      0,
+      0,
+      0
+    );
 
   // Render your app content to the default cylinder surface
   r360.renderToSurface(

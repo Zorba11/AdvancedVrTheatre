@@ -10,27 +10,47 @@ import { Easing } from 'react-native';
 class Button extends React.Component {
     constructor() {
         super();
-        this.state = { slideRight: new Animated.Value(-1), fadeIn: new Animated.Value(0)};
+        this.state = { slideRight: new Animated.Value(700), fadeIn: new Animated.Value(0)};
     }
 
     componentDidMount() {
-        
-      }
+        Animated.sequence([
+            Animated.parallel([
+                Animated.timing(
+                    this.state.slideRight,
+                    {
+                        toValue: 500,
+                        duration: 3000,
+                        easing: Easing.ease
+                    }),
+                    Animated.timing(
+                        this.state.fadeIn,
+                        {
+                         toValue: 1,
+                         duration: 3000,
+                         easing: Easing.ease
+                        }
+                    )
+            ]
+            )
+        ]).start();
+    }
     
     render() {
         return (
-            <View style={{
-                height: 80,
-                width: 420,
-                backgroundColor: '#A482DF',
+            <Animated.View style={{
+                height: 70,
+                width: 380,
+                backgroundColor: '#3889f2',
                 borderRadius: 35,
-                opacity: 1,
+                opacity: this.state.fadeIn,
                 transform: [
-                    {translateX: 500}
+                    {translateX: this.state.slideRight}
                 ]
             }}>
                 <VrButton>
                     <Text style={{
+                        fontWeight: 400,
                         fontSize: 50,
                         textAlign: 'center',
                         color: "#FFFFFF"
@@ -38,7 +58,7 @@ class Button extends React.Component {
                     {this.props.text}
                     </Text>
                 </VrButton>
-            </View>
+            </Animated.View>
         )
     }
 }
