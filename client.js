@@ -12,7 +12,7 @@ function init(bundle, parent, options = {}) {
 
   const myCylinderSurface = new Surface(
     1500,
-    800,
+    1000,
     Surface.SurfaceShape.Flat);
 
     myCylinderSurface.setAngle(

@@ -11,8 +11,9 @@ class MenuButtons extends React.Component {
       return (
         <View
           style={{
-            margin: 300,
-            width: 300,
+            marginLeft: 65,
+            marginTop: 20,
+            width: 400,
             flexDirection: 'column',
             alignItems: 'stretch',
             justifyContent: 'center'
@@ -20,15 +21,14 @@ class MenuButtons extends React.Component {
         >
           <View
             style={{
-              margin: 300,
-              height: 500,
+              margin: 25,
               backgroundColor: "#898794"
             }}
           >
             <VrButton>
               <Text
                 style={{
-                  fontSize: 150,
+                  fontSize: 80,
                   textAlign: 'center',
                   color: "#FFFFFF"
                 }}>
@@ -39,57 +39,54 @@ class MenuButtons extends React.Component {
   
           <View
             style={{
-              margin: 300,
-              height: 500,
+              margin: 25,
               backgroundColor: "#898794"
             }}
           >
             <VrButton>
               <Text
                 style={{
-                  fontSize: 150,
+                  fontSize: 80,
                   textAlign: 'center',
                   color: "#FFFFFF"
                 }}>
-  
+                NetFlix
               </Text>
             </VrButton>
           </View>
   
           <View
             style={{
-              margin: 300,
-              height: 500,
+              margin: 25,
               backgroundColor: "#898794"
             }}
           >
             <VrButton>
               <Text
                 style={{
-                  fontSize: 150,
+                  fontSize: 80,
                   textAlign: 'center',
                   color: "#FFFFFF"
                 }}>
-  
+                Prime
               </Text>
             </VrButton>
           </View>
   
           <View
             style={{
-              margin: 300,
-              height: 500,
+              margin: 25,
               backgroundColor: "#898794"
             }}
           >
             <VrButton>
               <Text
                 style={{
-                  fontSize: 150,
+                  fontSize: 80,
                   textAlign: 'center',
                   color: "#FFFFFF"
                 }}>
-  
+                HBO
               </Text>
             </VrButton>
           </View>

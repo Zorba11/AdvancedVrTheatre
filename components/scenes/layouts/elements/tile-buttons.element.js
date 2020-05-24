@@ -9,13 +9,13 @@ import {
 
     render() {
       return (
-        <View style={{marginTop: -90, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <View style={{ margin: 100, width: 300, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-            <View style={{ margin: 100, height: 300, backgroundColor: "#CAB9E5"}}>
+        <View style={{marginTop: -10, marginLeft: 250, width: 550, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{ margin: -70, width: 350, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{ margin: 25, height: 200, backgroundColor: "#CAB9E5"}}>
               <VrButton>
                 <Text
                   style={{
-                    fontSize: 150,
+                    fontSize: 80,
                     textAlign: 'center',
                     color: "#FFFFFF"
                   }}>
@@ -23,38 +23,11 @@ import {
                 </Text>
               </VrButton>
             </View>
-            <View style={{ margin: 100, height: 300, backgroundColor: "#CAB9E5"}}>
+            <View style={{ margin: 25, height: 200, backgroundColor: "#CAB9E5"}}>
               <VrButton>
                 <Text
                   style={{
-                    fontSize: 150,
-                    textAlign: 'center',
-                    color: "#FFFFFF"
-                  }}>
-  
-                </Text>
-              </VrButton>
-            </View>
-          </View>
-  
-          <View style={{ margin: 100, width: 300, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-            <View style={{ margin: 100, height: 300, backgroundColor: "#CAB9E5"}}>
-              <VrButton>
-                <Text
-                  style={{
-                    fontSize: 150,
-                    textAlign: 'center',
-                    color: "#FFFFFF"
-                  }}>
-  
-                </Text>
-              </VrButton>
-            </View>
-            <View style={{ margin: 100, height: 300, backgroundColor: "#CAB9E5"}}>
-              <VrButton>
-                <Text
-                  style={{
-                    fontSize: 150,
+                    fontSize: 80,
                     textAlign: 'center',
                     color: "#FFFFFF"
                   }}>
@@ -64,12 +37,12 @@ import {
             </View>
           </View>
   
-          <View style={{ margin: 100, width: 300, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-            <View style={{ margin: 100, height: 300, backgroundColor: "#CAB9E5"}}>
+          <View style={{ margin: 70, width: 350, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{ margin: 25, height: 200, backgroundColor: "#CAB9E5"}}>
               <VrButton>
                 <Text
                   style={{
-                    fontSize: 150,
+                    fontSize: 80,
                     textAlign: 'center',
                     color: "#FFFFFF"
                   }}>
@@ -77,11 +50,38 @@ import {
                 </Text>
               </VrButton>
             </View>
-            <View style={{ margin: 100, height: 300, backgroundColor: "#CAB9E5"}}>
+            <View style={{ margin: 25, height: 200, backgroundColor: "#CAB9E5"}}>
               <VrButton>
                 <Text
                   style={{
-                    fontSize: 150,
+                    fontSize: 80,
+                    textAlign: 'center',
+                    color: "#FFFFFF"
+                  }}>
+  
+                </Text>
+              </VrButton>
+            </View>
+          </View>
+  
+          <View style={{ margin: -70, width: 350, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{ margin: 25, height: 200, backgroundColor: "#CAB9E5"}}>
+              <VrButton>
+                <Text
+                  style={{
+                    fontSize: 80,
+                    textAlign: 'center',
+                    color: "#FFFFFF"
+                  }}>
+  
+                </Text>
+              </VrButton>
+            </View>
+            <View style={{ margin: 25, height: 200, backgroundColor: "#CAB9E5"}}>
+              <VrButton>
+                <Text
+                  style={{
+                    fontSize: 80,
                     textAlign: 'center',
                     color: "#FFFFFF"
                   }}>

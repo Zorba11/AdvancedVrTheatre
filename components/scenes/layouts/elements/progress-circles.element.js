@@ -7,11 +7,10 @@ class ProgressCircles extends React.Component {
 render() {
     return (
 <View>
-//Column
 <View
   style={{
-    margin: 100,
-    width: 200,
+    marginTop: 210,
+    marginLeft: 250,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center'
@@ -20,10 +19,10 @@ render() {
 
   <View
     style={{
-      margin: 100,
-      width: 100,
-      borderRadius: 300,
-      height: 400,
+      margin: 10,
+      width: 80,
+      borderRadius: 50,
+      height: 80,
       backgroundColor: "#DBDAF1"
     }}
   >
@@ -31,10 +30,10 @@ render() {
 
   <View
     style={{
-      margin: 100,
-      width: 100,
-      borderRadius: 300,
-      height: 400,
+      margin: 10,
+      width: 80,
+      borderRadius: 50,
+      height: 80,
       backgroundColor: "#DBDAF1"
     }}
   >
