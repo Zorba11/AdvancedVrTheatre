@@ -50,7 +50,6 @@ class Button extends React.Component {
             }}>
                 <VrButton>
                     <Text style={{
-                        fontWeight: 400,
                         fontSize: 50,
                         textAlign: 'center',
                         color: "#FFFFFF"

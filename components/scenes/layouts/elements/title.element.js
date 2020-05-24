@@ -40,7 +40,6 @@ class Title extends React.Component {
             <View>
                 <Animated.Text style={{
                     fontSize: 50,
-                    fontWeight: 400,
                     textAlign: 'center', 
                     color: '#FFFFFF',
                     opacity: this.state.fadeIn,
