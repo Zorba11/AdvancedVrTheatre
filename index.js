@@ -6,12 +6,13 @@ import {
   asset
 } from 'react-360';
 
+import axios from 'react-native-axios';
+
 import TitleScene from './components/scenes/title.scene';
 import Dashboard from './components/scenes/dashboard.scene';
-import DashboardLayout from './components/scenes/layouts/dashboard.layout'
+import DashboardLayout from './components/scenes/layouts/dashboard.layout';
+import VideoPlayer from './components/scenes/video-player.scene';
 
-// <TitleScene showButton={true} text={'Watch a Flick !'} />
-// <Dashboard text={"Select Environment"}/>
 
 export default class AdvancedTheatreVr extends React.Component {
   render() {
@@ -19,7 +20,7 @@ export default class AdvancedTheatreVr extends React.Component {
     Environment.setBackgroundImage(asset('title-background.jpg', {format: '2D'}));
     return (
       <View>
-      <Dashboard text={"Select Environment"}/>
+      <VideoPlayer showButton={true} text={"Back to Dashboard"}/>
       </View>
     );
   }

@@ -3,8 +3,8 @@ import { Text, View, VrButton, Animated } from "react-360";
 import { Easing } from "react-native";
 
 class Button extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       slideRight: new Animated.Value(700),
       fadeIn: new Animated.Value(0),
@@ -34,32 +34,43 @@ class Button extends React.Component {
     ]).start();
   }
 
+  componentWillReceiveProps() {
+  
+  }
   render() {
     return (
-        <Animated.View
-        style={{
-          marginTop: 50,
-          height: 70,
-          paddingLeft: 25,
-          paddingRight: 25,
-          backgroundColor: "#3889f2",
-          borderRadius: 35,
-          opacity: this.state.fadeIn,
-          transform: [{ translateX: this.state.slideRight }],
-        }}
-      >
-        <VrButton>
-          <Text
-            style={{
-              fontSize: 50,
-              textAlign: "center",
-              color: "#FFFFFF",
-            }}
-          >
-            {this.props.text}
-          </Text>
-        </VrButton>
-      </Animated.View>
+      <View>
+        {
+            this.props.showButton? (
+                <Animated.View
+                style={{
+                  marginTop: 50,
+                  height: 70,
+                  paddingLeft: 25,
+                  paddingRight: 25,
+                  backgroundColor: "#3889f2",
+                  borderRadius: 35,
+                  opacity: this.state.fadeIn,
+                  transform: [{ translateX: this.state.slideRight }],
+                }}
+              >
+                <VrButton onClick={this.props.updateScene}>
+                  <Text
+                    style={{
+                      fontSize: 50,
+                      textAlign: "center",
+                      color: "#FFFFFF",
+                    }}
+                  >
+                    {this.props.text}
+                  </Text>
+                </VrButton>
+              </Animated.View>
+            ) :(
+                <View></View>
+            )
+        }
+      </View>
     )
   }
 }

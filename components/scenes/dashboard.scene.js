@@ -7,11 +7,13 @@ import DashboardLayout from './layouts/dashboard.layout';
 
 
 class Dashboard extends React.Component {
-
+    constructor(props) {
+        super()
+    }
     render() {
         return (
             <View>
-                <DashboardLayout text={this.props.text} />
+                <DashboardLayout showButton={this.props.showButton} text={this.props.text} />
             </View>
         )
     }

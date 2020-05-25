@@ -4,6 +4,9 @@ import {
 } from 'react-360';
 //Element
 class ProgressCircles extends React.Component {
+  constructor() {
+    super();
+  }
 render() {
     return (
 <View>
@@ -23,7 +26,7 @@ render() {
       width: 80,
       borderRadius: 50,
       height: 80,
-      backgroundColor: "#DBDAF1"
+      backgroundColor: this.props.color1
     }}
   >
   </View>
@@ -34,7 +37,7 @@ render() {
       width: 80,
       borderRadius: 50,
       height: 80,
-      backgroundColor: "#DBDAF1"
+      backgroundColor: this.props.color2
     }}
   >
   </View>

@@ -22,7 +22,7 @@ class TitleLayout extends React.Component {
                 }}
             >
                 <Title />
-                <Button text={this.props.text} />
+                <Button showButton={this.props.showButton} text={this.props.text} />
             </View>
         )
     }
