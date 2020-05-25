@@ -9,11 +9,25 @@ import {
 import VideoPlayerLayout from './layouts/video-player.layout';
 //Scene
 class VideoPlayer extends React.Component {
+  constructor() {
+    super();
+    this.state = { streamURL: "" }
+  }
+
+  componentWillMount() {
+    this.setState({ streamURL: 'http://player.twitch.tv/?channel=' + this.props.streamID })
+  }
+
   render() {
-    // Environment.setBackgroundImage(asset('title-background.jpg', {format: '2D'}));
+    Environment.setBackgroundImage(asset(this.props.env));
     return (
       <View>
-      <VideoPlayerLayout showButton={this.props.showButton} text={this.props.text}/>
+      <VideoPlayerLayout
+        streamURL={this.state.streamURL}
+        changeScenes={this.props.changeScenes}
+        scene={this.props.scene}
+        showButton={this.props.showButton}
+        text={this.props.text}/>
       </View>
     )
   }

@@ -13,7 +13,8 @@ class TitleLayout extends React.Component {
         return (
             <View 
                 style={{
-                    height: 1500,
+                    marginTop: 220,
+                    height: 1300,
                     width: 800,
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -22,7 +23,11 @@ class TitleLayout extends React.Component {
                 }}
             >
                 <Title />
-                <Button showButton={this.props.showButton} text={this.props.text} />
+                <Button
+                    changeScenes={this.props.changeScenes}
+                    scene={this.props.scene}
+                    showButton={this.props.showButton} 
+                    text={this.props.text} />
             </View>
         )
     }

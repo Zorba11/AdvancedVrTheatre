@@ -39,10 +39,12 @@ class Title extends React.Component {
         return (
             <View>
                 <Animated.Text style={{
-                    fontSize: 50,
+                    fontSize: 60,
+                    fontWeight: 400,
                     textAlign: 'center', 
                     color: '#FFFFFF',
                     opacity: this.state.fadeIn,
+                    marginBottom: 5,
                     transform: [
                         {
                             translateX: this.state.slideLeft

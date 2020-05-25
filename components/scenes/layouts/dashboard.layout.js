@@ -21,7 +21,9 @@ class DashboardLayout extends React.Component {
       color1: "#A482DF", 
       color2: "#DBDAF1",
       text: this.props.text,
-      borderWidths: [0, 0, 0, 0, 0, 0]
+      borderWidths: [0, 0, 0, 0, 0, 0],
+      stage: 1,
+      selectionIndex: ''
       }   
   }
 
@@ -54,32 +56,32 @@ class DashboardLayout extends React.Component {
     }
   switch (input) {
       case 1:
-        this.setState({borderWidths: [8, 0, 0, 0, 0, 0]});
+        this.setState({borderWidths: [8, 0, 0, 0, 0, 0], selectionIndex: 1 });
         break;
       case 2:
-        this.setState({borderWidths: [0, 8, 0, 0, 0, 0]});
+        this.setState({borderWidths: [0, 8, 0, 0, 0, 0], selectionIndex: 2 });
         break;
       case 3:
-        this.setState({borderWidths: [0, 0, 8, 0, 0, 0]});
+        this.setState({borderWidths: [0, 0, 8, 0, 0, 0], selectionIndex: 3 });
         break;
       case 4:
-        this.setState({borderWidths: [0, 0, 0, 8, 0, 0]});
+        this.setState({borderWidths: [0, 0, 0, 8, 0, 0], selectionIndex: 4 });
         break;
       case 5:
-        this.setState({borderWidths: [0, 0, 0, 0, 8, 0]});
+        this.setState({borderWidths: [0, 0, 0, 0, 8, 0], selectionIndex: 5 });
         break;
       case 6:
-        this.setState({borderWidths: [0, 0, 0, 0, 0, 8]});
+        this.setState({borderWidths: [0, 0, 0, 0, 0, 8], selectionIndex: 6 });
         break;
     }
   }
 
   updateScene() {
-    this.setState({color1: "#DBDAF1", color2: "#A482DF", text: "Watch Video"});
+    this.props.captureSelection(this.state.stage, this.state.selectionIndex);
+    this.setState({color1: "#DBDAF1", color2: "#A482DF", text: "Watch Video", stage: 2});
   }
 
     render() {
-     console.log('state..', this.state);
         return (
           <View>
           <Animated.View style={{
@@ -96,7 +98,12 @@ class DashboardLayout extends React.Component {
               width: 500
             }}>
               <MenuButtons/>
-              <TileButtons previews={this.props.previews} updateStage={this.updateStage.bind(this)} borderWidths={this.state.borderWidths}/>
+              <TileButtons 
+                stage={this.state.stage}
+                environments={this.props.environments}
+                previews={this.props.previews} 
+                updateStage={this.updateStage.bind(this)} 
+                borderWidths={this.state.borderWidths}/>
               <ProgressCircles color1={this.state.color1} color2={this.state.color2}/>
             </Animated.View>
             <View style={{
@@ -104,7 +111,14 @@ class DashboardLayout extends React.Component {
               alignItems: 'flex-start',
               marginLeft: 120
             }}>
-            <Button updateScene={this.updateScene.bind(this)} showButton={this.state.showButton} text={this.state.text}/>
+            <Button
+              selectionIndex={this.state.selectionIndex}
+              changeScenes={this.props.changeScenes}
+              scene={this.props.scene}
+              stage={this.state.stage}
+              updateScene={this.updateScene.bind(this)} 
+              showButton={this.state.showButton} 
+              text={this.state.text}/>
             </View>
           </View>
         )

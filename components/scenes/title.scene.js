@@ -13,7 +13,11 @@ class TitleScene extends React.Component {
 
         return (
             <View>
-                <TitleLayout showButton={this.props.showButton}  text={this.props.text} />
+                <TitleLayout
+                changeScenes={this.props.changeScenes}
+                scene={this.props.scene}
+                showButton={this.props.showButton}  
+                text={this.props.text} />
             </View>
         )
     }

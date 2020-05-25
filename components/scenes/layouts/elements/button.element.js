@@ -34,10 +34,25 @@ class Button extends React.Component {
     ]).start();
   }
 
-  componentWillReceiveProps() {
-  
-  }
   render() {
+
+    const stage = this.props.stage;
+    const currentScene = this.props.scene;
+    const selectionIndex = this.props.selectionIndex;
+
+    let nextScene;
+    switch (currentScene) {
+      case 1:
+        nextScene = 2;
+        break;
+      case 2:
+        nextScene = 3;
+        break;
+      case 3:
+        nextScene = 1;
+        break;
+    }
+
     return (
       <View>
         {
@@ -48,23 +63,48 @@ class Button extends React.Component {
                   height: 70,
                   paddingLeft: 25,
                   paddingRight: 25,
-                  backgroundColor: "#3889f2",
+                  backgroundColor: "#A482DF",
                   borderRadius: 35,
                   opacity: this.state.fadeIn,
                   transform: [{ translateX: this.state.slideRight }],
                 }}
               >
-                <VrButton onClick={this.props.updateScene}>
-                  <Text
-                    style={{
-                      fontSize: 50,
-                      textAlign: "center",
-                      color: "#FFFFFF",
-                    }}
-                  >
-                    {this.props.text}
-                  </Text>
-                </VrButton>
+               {currentScene === 2 ? (
+                <VrButton onClick={() => { 
+                    switch (stage) {
+                      case 1:
+                        this.props.updateScene();
+                        break;
+                      case 2:
+                        this.props.changeScenes(nextScene, selectionIndex);
+                        break;
+                    }
+                }}>
+                <Text
+                  style={{
+                    fontSize: 50,
+                    textAlign: "center",
+                    color: "#CAB9E5",
+                    marginTop: 5
+                  }}
+                >
+                  {this.props.text}
+                </Text>
+              </VrButton>
+               ) : ( 
+                <VrButton onClick={() => this.props.changeScenes(nextScene)}>
+                <Text
+                  style={{
+                    fontSize: 50,
+                    textAlign: "center",
+                    color: "#CAB9E5",
+                    marginTop: 5
+                  }}
+                >
+                  {this.props.text}
+                </Text>
+              </VrButton>
+               )}
               </Animated.View>
             ) :(
                 <View></View>

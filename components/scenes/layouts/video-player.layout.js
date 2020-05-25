@@ -20,7 +20,7 @@ render() {
           backgroundColor: '#333333',
           
         }}>
-        <VideoElement/>
+        <VideoElement streamURL={this.props.streamURL} />
         </View>
       <View style={{
           flex: 1,
@@ -31,7 +31,11 @@ render() {
           transform: [{translate: [0, 30, 100]} ]
         }}>
 
-<Button showButton={this.props.showButton} text={this.props.text}/>
+      <Button 
+        changeScenes={this.props.changeScenes}
+        scene={this.props.scene}
+        showButton={this.props.showButton} 
+        text={this.props.text}/>
         </View>
       </View>
     )
