@@ -54,22 +54,22 @@ class DashboardLayout extends React.Component {
     }
   switch (input) {
       case 1:
-        this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0]});
+        this.setState({borderWidths: [8, 0, 0, 0, 0, 0]});
         break;
       case 2:
-        this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0]});
+        this.setState({borderWidths: [0, 8, 0, 0, 0, 0]});
         break;
       case 3:
-        this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0]});
+        this.setState({borderWidths: [0, 0, 8, 0, 0, 0]});
         break;
       case 4:
-        this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0]});
+        this.setState({borderWidths: [0, 0, 0, 8, 0, 0]});
         break;
       case 5:
-        this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0]});
+        this.setState({borderWidths: [0, 0, 0, 0, 8, 0]});
         break;
       case 6:
-        this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05]});
+        this.setState({borderWidths: [0, 0, 0, 0, 0, 8]});
         break;
     }
   }
@@ -96,7 +96,7 @@ class DashboardLayout extends React.Component {
               width: 500
             }}>
               <MenuButtons/>
-              <TileButtons updateStage={this.updateStage.bind(this)} borderWidths={this.state.borderWidths}/>
+              <TileButtons previews={this.props.previews} updateStage={this.updateStage.bind(this)} borderWidths={this.state.borderWidths}/>
               <ProgressCircles color1={this.state.color1} color2={this.state.color2}/>
             </Animated.View>
             <View style={{

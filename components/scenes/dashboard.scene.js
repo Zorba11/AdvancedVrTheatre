@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <View>
-                <DashboardLayout showButton={this.props.showButton} text={this.props.text} />
+                <DashboardLayout previews={this.props.previews} showButton={this.props.showButton} text={this.props.text} />
             </View>
         )
     }
